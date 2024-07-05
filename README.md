@@ -15,6 +15,7 @@ npm run dev
 
 ## Api Specification
 Base URL : https://final-project-aulia-sabri-production.up.railway.app
+
 Endpoint :
 
 | HTTP Method | URL | Description |
