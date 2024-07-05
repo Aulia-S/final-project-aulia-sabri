@@ -82,7 +82,7 @@ export default {
         email,
         password,
       })
-      const userByEmail = await UserModel.findOne({ email })
+      const userByEmail: any = await UserModel.findOne({ email })
 
       if (!userByEmail) {
         throw new Error('User not found')
@@ -134,6 +134,7 @@ export default {
         email,
         password,
         roles,
+        orders: [],
       })
       res.json({
         message: 'User registered successfully',
