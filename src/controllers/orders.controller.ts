@@ -90,6 +90,7 @@ export default {
 
       // end transaction
       await sess.commitTransaction()
+      sess.endSession()
 
       res.status(201).json({
         data: result,

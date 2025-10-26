@@ -57,7 +57,6 @@ UserSchema.pre('save', async function (next) {
 UserSchema.pre('save', async function (doc) {
   const user = this
 
-  console.log(this.isNew)
   if (this.isNew) {
     console.log('sendmail register success to ' + user.username)
 
@@ -65,11 +64,13 @@ UserSchema.pre('save', async function (doc) {
       username: user.username,
     })
 
+    console.log('send email')
     await mail.send({
       to: user.email,
       subject: 'Registration Success',
       content,
     })
+    console.log('email sent')
   }
 })
 
